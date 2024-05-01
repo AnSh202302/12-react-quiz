@@ -36,7 +36,11 @@ export default function Quiz() {
   return (
     <div id="quiz">
       <div id="question">
-        <QuestionTimer timeout={timeout} onTimeout={handleSkipAnswer} />
+        <QuestionTimer
+          key={activeQuestionIndex}
+          timeout={timeout}
+          onTimeout={handleSkipAnswer}
+        />
         <h2>{DATA[activeQuestionIndex].text}</h2>
         <ul id="answers">
           {shuffledAnswers.map((answer) => (
